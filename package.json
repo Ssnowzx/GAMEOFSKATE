@@ -1,0 +1,10 @@
+{
+  "name": "game-of-skate-backend",
+  "version": "1.0.0",
+  "description": "Backend for Game of Skate registration",
+  "main": "server.js",
+  "scripts": {},
+  "dependencies": {
+    "@vercel/postgres": "^0.5.0"
+  }
+}
