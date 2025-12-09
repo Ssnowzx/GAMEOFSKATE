@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Skate - Galeria</title>
+    <!-- Tailwind CSS (Estilos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: sans-serif; }
+        .font-impact { font-family: 'Impact', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen w-full relative bg-[#2e1a0b]">
+
+    <!-- Camada de Fundo (Background) -->
+    <div class="fixed inset-0 bg-cover bg-center z-0" style="background-image: url('puplic/pagina2.png');">
+        <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <button id="close-modal" class="absolute top-4 right-4 text-white hover:text-orange-500 transition-colors z-50">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="modal-image" src="" alt="Full view" class="max-h-[90vh] max-w-[95vw] object-contain rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.5)] scale-95 transition-transform duration-300 select-none">
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="relative z-10 w-full min-h-screen flex flex-col items-center p-4 md:p-8">
+        
+        <!-- Cabeçalho -->
+        <div class="w-full max-w-7xl flex items-center justify-between mb-8">
+            <h1 class="text-3xl md:text-5xl font-black text-orange-500 uppercase tracking-tighter flex items-center gap-3 drop-shadow-sm font-impact">
+                <i data-lucide="image" class="w-8 h-8 md:w-10 md:h-10"></i>
+                Galeria
+            </h1>
+            <a href="index.html" class="text-orange-500 hover:text-orange-300 transition-colors bg-black/50 p-2 rounded-full hover:bg-black/70">
+                <i data-lucide="arrow-left" class="w-6 h-6 md:w-8 md:h-8"></i>
+            </a>
+        </div>
+
+        <!-- Grid de Fotos -->
+        <div class="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <!-- Imagens 1 a 11 - Adicionado cursor-pointer e onclick -->
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/01.jpg" alt="Foto 01" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                     <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+                </div>
+            </div>
+             <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/1.jpg" alt="Foto 1" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                     <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+                </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/2.jpg" alt="Foto 2" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/3.jpg" alt="Foto 3" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/4.jpg" alt="Foto 4" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/5.jpg" alt="Foto 5" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/6.jpg" alt="Foto 6" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/7.jpg" alt="Foto 7" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/8.jpg" alt="Foto 8" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/9.jpg" alt="Foto 9" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/10.jpg" alt="Foto 10" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item">
+                <img src="puplic/11.jpg" alt="Foto 11" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end justify-center pb-4">
+                    <i data-lucide="maximize-2" class="text-white w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"></i>
+               </div>
+            </div>
+            <!-- Videos 12 e 13 -->
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item" data-type="video" data-src="puplic/12.mp4">
+                <video src="puplic/12.mp4" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                    <div class="bg-orange-500/80 p-3 rounded-full backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                         <i data-lucide="play" class="text-white w-6 h-6 fill-white"></i>
+                    </div>
+                </div>
+            </div>
+             <div class="group relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-orange-500/20 shadow-lg transition-all hover:scale-[1.02] hover:shadow-orange-500/20 hover:border-orange-500 cursor-pointer js-gallery-item" data-type="video" data-src="puplic/13.mp4">
+                <video src="puplic/13.mp4" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                    <div class="bg-orange-500/80 p-3 rounded-full backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                         <i data-lucide="play" class="text-white w-6 h-6 fill-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Lógica do Modal/Lightbox
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        // Criar elemento de video pro modal dinamicamente ou manipular o src
+        // Vamos adicionar um elemento de video ao modal
+        const modalVideo = document.createElement('video');
+        modalVideo.id = 'modal-video';
+        modalVideo.className = 'max-h-[90vh] max-w-[95vw] rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.5)] scale-95 transition-transform duration-300 hidden';
+        modalVideo.controls = true;
+        modalVideo.autoplay = true;
+        
+        // Inserir video antes da imagem
+        modal.insertBefore(modalVideo, modalImg);
+
+        const closeBtn = document.getElementById('close-modal');
+        const galleryItems = document.querySelectorAll('.js-gallery-item');
+
+        // Play videos nas thumbnails ao passar o mouse
+        galleryItems.forEach(item => {
+            const video = item.querySelector('video');
+            if(video) {
+                item.addEventListener('mouseenter', () => video.play());
+                item.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            }
+        });
+
+        function openModal(src, type) {
+            modal.classList.remove('hidden');
+            
+            if (type === 'video') {
+                modalImg.classList.add('hidden');
+                modalVideo.classList.remove('hidden');
+                modalVideo.src = src;
+                
+                // Pequeno delay
+                setTimeout(() => {
+                    modalVideo.classList.remove('scale-95');
+                    modalVideo.classList.add('scale-100');
+                }, 10);
+            } else {
+                modalVideo.classList.add('hidden');
+                modalVideo.pause();
+                modalVideo.src = '';
+                
+                modalImg.classList.remove('hidden');
+                modalImg.src = src;
+
+                // Pequeno delay
+                setTimeout(() => {
+                    modalImg.classList.remove('scale-95');
+                    modalImg.classList.add('scale-100');
+                }, 10);
+            }
+
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            modalVideo.classList.remove('scale-100');
+            modalVideo.classList.add('scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImg.src = '';
+                modalVideo.src = '';
+                modalVideo.pause();
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        // Adiciona eventos aos itens da galeria
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const type = item.getAttribute('data-type') || 'image';
+                const src = item.getAttribute('data-src') || item.querySelector('img').src;
+                openModal(src, type);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
